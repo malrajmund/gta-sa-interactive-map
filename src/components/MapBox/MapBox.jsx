@@ -1,4 +1,3 @@
-// src/MapBox.js
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -16,7 +15,7 @@ const MapBox = () => {
         [-5, -5]
     ];
     const centerCoordinates = [
-        (imageCoordinates[0][0] + imageCoordinates[1][0]) / 2,
+        ((imageCoordinates[0][0] + imageCoordinates[1][0]) / 2) - 4,
         (imageCoordinates[0][1] + imageCoordinates[3][1]) / 2
     ];
 
@@ -48,7 +47,10 @@ const MapBox = () => {
     }, []);
 
     return (
-        <div ref={mapContainer} className="map-container" />
+        <main className='MapBox__wrapper'>
+            <div ref={mapContainer} className="MapBox__container" />
+        </main>
+
     );
 };
 
